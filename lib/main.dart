@@ -103,7 +103,7 @@ class transaction_history extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                    color: Colors.white,
+                    color: Colors.yellow,
                     width: 750,
                     margin: EdgeInsets.all(16.0),
                     padding: EdgeInsets.all(10.0),
