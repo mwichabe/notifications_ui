@@ -107,67 +107,20 @@ class transaction_history extends StatelessWidget {
                   color: Colors.white,
                   width: 750,
                   height: 400,
-                  child: ListView(
-                    scrollDirection: Axis.vertical,
-                    children: [
-                      Column(
-                          children:[
-                            Container(
-                                color: Colors.white,
-                                width: 750,
-                                margin: EdgeInsets.all(16.0),
-                                padding: EdgeInsets.all(10.0),
-                                child: Row(
-                                    mainAxisAlignment:MainAxisAlignment.start,
-                                    children: [
-                                      Expanded(
-                                          flex:3,
-                                          child: Text('RECEIVER',style: TextStyle(color: Colors.grey),)),
-                                      Expanded(
-                                        flex: 1,
-                                        child: SizedBox(
-                                          width: 50,
-                                        ),
-                                      ),
-                                      Expanded(
-                                          flex:2,
-                                          child: Text('TYPE',style: TextStyle(color: Colors.grey),)),
-                                      Expanded(
-                                        flex: 1,
-                                        child: SizedBox(
-                                          width: 30,
-                                        ),
-                                      ),
-                                      Expanded(
-                                          flex:2,
-                                          child:Text('DATE',style: TextStyle(color: Colors.grey),)),
-                                      Expanded(
-                                        flex: 1,
-                                        child: SizedBox(
-                                          width: 50,
-                                        ),
-                                      ),
-                                      Expanded(
-                                          flex: 3,
-                                          child: Text('AMOUNT',style: TextStyle(color: Colors.grey),)),
-                                      Expanded(flex: 1,
-                                        child: SizedBox(
-                                          width: 40,
-                                        ),
-                                      ),
-                                      Expanded( flex: 2,
-                                          child: Text('STATUS',style: TextStyle(color: Colors.grey),)),
-                                      SizedBox(width: 20),
-                                    ])),
-                            Divider(
-                              height: 2,
-                              color: Colors.grey,
-                            ),
-
-                          ]
-
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: SingleChildScrollView(
+                      child: DataTable(
+                        columns: [
+                          DataColumn(label: Text('RECEIVER')),
+                          DataColumn(label: Text('TYPE')),
+                          DataColumn(label: Text('DATE')),
+                          DataColumn(label: Text('AMOUNT')),
+                          DataColumn(label: Text('STATUS')),
+                        ],
+                        rows:[]
                       ),
-                    ],
+                    ),
                   ),
                 ),
                 SizedBox(width: 40),
